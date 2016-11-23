@@ -36,10 +36,10 @@ var dashboard = new ParseDashboard({
     },
   ],
   trustProxy: 1,
-  users: {
+  users: [{
     user: 'jmeacham',
     pass: '$2a$08$ec3HBzcAWbUJDIYoJkjDIOtiYA8poN0i5dmxR1F2Rfh/VVXxHxx/2'
-  },
+  }],
   useEncryptedPasswords: true
 })
 
