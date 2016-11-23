@@ -45,7 +45,7 @@ var dashboard = new ParseDashboard({
 
 var app = express();
 
-app.user('/dashboard', dashboard)
+app.use('/dashboard', dashboard)
 
 // Serve the Parse API on the /parse URL prefix
 var mountPath = process.env.PARSE_MOUNT || '/parse';
