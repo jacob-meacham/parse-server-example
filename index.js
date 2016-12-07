@@ -13,6 +13,8 @@ if (!databaseUri) {
 }
 
 var api = new ParseServer({
+  appName: process.env.APP_NAME || 'Here One',
+  publicServerURL: process.env.PUBLIC_SERVER_URL,
   databaseURI: databaseUri,
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID,
@@ -21,8 +23,19 @@ var api = new ParseServer({
   clientKey: process.env.CLIENT_KEY,
   restAPIKey: process.env.REST_API_KEY,
   javascriptKey: process.env.JAVASCRIPT_API_KEY,
-  liveQuery: {
-    classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
+  oauth: {
+    facebook: {
+      appIds: ['1791007521171343', '1762645524007543']
+    }
+  },
+  emailAdapter: {
+    module: 'parse-server-amazon-ses-adapter',
+    options: {
+      from: 'Doppler Labs <no-reply@dopplerlabs.com>',
+      accessKeyId: process.env.SES_ACCESS_KEY,
+      secretAccessKey: process.env.SES_SECRET,
+      region: 'us-west-2'
+    }
   }
 });
 
@@ -50,17 +63,6 @@ app.use('/dashboard', dashboard)
 // Serve the Parse API on the /parse URL prefix
 var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
-
-// Parse Server plays nicely with the rest of your web routes
-app.get('/', function(req, res) {
-  res.status(200).send('I dream of being a website.  Please star the parse-server repo on GitHub!');
-});
-
-// There will be a test page available on the /test path of your server url
-// Remove this before launching your app
-app.get('/test', function(req, res) {
-  res.sendFile(path.join(__dirname, '/public/test.html'));
-});
 
 var port = process.env.PORT || 1337;
 var httpServer = require('http').createServer(app);

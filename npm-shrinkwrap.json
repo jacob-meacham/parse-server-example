@@ -34,10 +34,28 @@
       "from": "alter@>=0.2.0 <0.3.0",
       "resolved": "https://registry.npmjs.org/alter/-/alter-0.2.0.tgz"
     },
+    "amazon-ses-mailer": {
+      "version": "0.2.0",
+      "from": "amazon-ses-mailer@>=0.2.0 <0.3.0",
+      "resolved": "https://registry.npmjs.org/amazon-ses-mailer/-/amazon-ses-mailer-0.2.0.tgz",
+      "dependencies": {
+        "xml2js": {
+          "version": "0.4.17",
+          "from": "xml2js@>=0.4.16 <0.5.0",
+          "resolved": "https://registry.npmjs.org/xml2js/-/xml2js-0.4.17.tgz"
+        },
+        "xmlbuilder": {
+          "version": "4.2.1",
+          "from": "xmlbuilder@>=4.1.0 <5.0.0",
+          "resolved": "https://registry.npmjs.org/xmlbuilder/-/xmlbuilder-4.2.1.tgz"
+        }
+      }
+    },
     "amdefine": {
       "version": "1.0.1",
       "from": "amdefine@>=0.0.4",
-      "resolved": "https://registry.npmjs.org/amdefine/-/amdefine-1.0.1.tgz"
+      "resolved": "https://registry.npmjs.org/amdefine/-/amdefine-1.0.1.tgz",
+      "optional": true
     },
     "ansi": {
       "version": "0.3.1",
@@ -165,18 +183,21 @@
       "version": "0.8.7",
       "from": "bcrypt@0.8.7",
       "resolved": "https://registry.npmjs.org/bcrypt/-/bcrypt-0.8.7.tgz",
+      "optional": true,
       "dependencies": {
         "nan": {
           "version": "2.3.5",
           "from": "nan@2.3.5",
-          "resolved": "https://registry.npmjs.org/nan/-/nan-2.3.5.tgz"
+          "resolved": "https://registry.npmjs.org/nan/-/nan-2.3.5.tgz",
+          "optional": true
         }
       }
     },
     "bcrypt-pbkdf": {
       "version": "1.0.0",
       "from": "bcrypt-pbkdf@>=1.0.0 <2.0.0",
-      "resolved": "https://registry.npmjs.org/bcrypt-pbkdf/-/bcrypt-pbkdf-1.0.0.tgz"
+      "resolved": "https://registry.npmjs.org/bcrypt-pbkdf/-/bcrypt-pbkdf-1.0.0.tgz",
+      "optional": true
     },
     "bcryptjs": {
       "version": "2.3.0",
@@ -186,7 +207,8 @@
     "bindings": {
       "version": "1.2.1",
       "from": "bindings@1.2.1",
-      "resolved": "https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz"
+      "resolved": "https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz",
+      "optional": true
     },
     "body-parser": {
       "version": "1.15.2",
@@ -552,7 +574,8 @@
     "ecc-jsbn": {
       "version": "0.1.1",
       "from": "ecc-jsbn@>=0.1.1 <0.2.0",
-      "resolved": "https://registry.npmjs.org/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz"
+      "resolved": "https://registry.npmjs.org/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz",
+      "optional": true
     },
     "ee-first": {
       "version": "1.1.0",
@@ -915,12 +938,14 @@
     "jodid25519": {
       "version": "1.0.2",
       "from": "jodid25519@>=1.0.0 <2.0.0",
-      "resolved": "https://registry.npmjs.org/jodid25519/-/jodid25519-1.0.2.tgz"
+      "resolved": "https://registry.npmjs.org/jodid25519/-/jodid25519-1.0.2.tgz",
+      "optional": true
     },
     "jsbn": {
       "version": "0.1.0",
       "from": "jsbn@>=0.1.0 <0.2.0",
-      "resolved": "https://registry.npmjs.org/jsbn/-/jsbn-0.1.0.tgz"
+      "resolved": "https://registry.npmjs.org/jsbn/-/jsbn-0.1.0.tgz",
+      "optional": true
     },
     "json-file-plus": {
       "version": "3.3.0",
@@ -1532,6 +1557,11 @@
         }
       }
     },
+    "parse-server-amazon-ses-adapter": {
+      "version": "1.0.0",
+      "from": "parse-server-amazon-ses-adapter@latest",
+      "resolved": "https://registry.npmjs.org/parse-server-amazon-ses-adapter/-/parse-server-amazon-ses-adapter-1.0.0.tgz"
+    },
     "parse-server-fs-adapter": {
       "version": "1.0.1",
       "from": "parse-server-fs-adapter@1.0.1",
@@ -1914,7 +1944,8 @@
     "source-map": {
       "version": "0.2.0",
       "from": "source-map@>=0.2.0 <0.3.0",
-      "resolved": "https://registry.npmjs.org/source-map/-/source-map-0.2.0.tgz"
+      "resolved": "https://registry.npmjs.org/source-map/-/source-map-0.2.0.tgz",
+      "optional": true
     },
     "spex": {
       "version": "1.1.0",
@@ -2046,7 +2077,8 @@
     "tweetnacl": {
       "version": "0.14.3",
       "from": "tweetnacl@>=0.14.0 <0.15.0",
-      "resolved": "https://registry.npmjs.org/tweetnacl/-/tweetnacl-0.14.3.tgz"
+      "resolved": "https://registry.npmjs.org/tweetnacl/-/tweetnacl-0.14.3.tgz",
+      "optional": true
     },
     "type-check": {
       "version": "0.3.2",
@@ -2079,6 +2111,11 @@
       "version": "1.0.2",
       "from": "ultron@>=1.0.0 <1.1.0",
       "resolved": "https://registry.npmjs.org/ultron/-/ultron-1.0.2.tgz"
+    },
+    "underscore": {
+      "version": "1.8.3",
+      "from": "underscore@>=1.8.3 <2.0.0",
+      "resolved": "https://registry.npmjs.org/underscore/-/underscore-1.8.3.tgz"
     },
     "unpipe": {
       "version": "1.0.0",
