@@ -25,7 +25,7 @@ var api = new ParseServer({
   javascriptKey: process.env.JAVASCRIPT_API_KEY,
   oauth: {
     facebook: {
-      appIds: ['1791007521171343', '1762645524007543']
+      appIds: ['1791007521171343', '1762645524007543', '1762649524007143']
     }
   },
   emailAdapter: {
